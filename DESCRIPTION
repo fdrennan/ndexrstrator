@@ -11,7 +11,10 @@ Depends:
     ndexutils,
     biggr,
     ndexpg,
-    dbx
+    dbx,
+    furrr,
+    glue,
+    tidyverse
 Remotes:  
     fdrennan/ndexssh
     fdrennan/ndexutils
