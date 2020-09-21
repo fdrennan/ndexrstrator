@@ -9,9 +9,8 @@
     ]
   },
   "Python": {
-    "Version": "3.6.11",
-    "Type": "conda",
-    "Name": "renv-python"
+    "Version": "3.8.5",
+    "Type": "virtualenv"
   },
   "Packages": {
     "renv": {
