@@ -3,3 +3,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.travis\.yml$
+instance.sh
+main.R
+dns_table.rda
+install.R

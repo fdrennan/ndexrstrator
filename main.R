@@ -1,4 +1,8 @@
 library(ndexrstrator)
+library(furrr)
+library(glue)
+
+system('rm ec2*')
 
 AWS_ACCESS <- Sys.getenv('AWS_ACCESS')
 AWS_SECRET <- Sys.getenv('AWS_SECRET')
@@ -92,7 +96,6 @@ if (BUILD_STAGE == 'BUILD') {
       unique_file = 'user_data_complete',
       keyfile = "/Users/fdrennan/fdren.pem"
     )
-
 
   readr::write_rds(dns_table, 'dns_table.rda')
 
