@@ -1,0 +1,5 @@
+renv::use_python()
+reticulate::py_install("scipy")
+reticulate::py_install("awscli")
+reticulate::py_install("boto3")
+reticulate::py_install("paramiko")

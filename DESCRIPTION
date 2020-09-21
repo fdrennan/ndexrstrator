@@ -10,7 +10,8 @@ Depends:
     ndexssh,
     ndexutils,
     biggr,
-    ndexpg
+    ndexpg,
+    dbx
 Remotes:  
     fdrennan/ndexssh
     fdrennan/ndexutils
