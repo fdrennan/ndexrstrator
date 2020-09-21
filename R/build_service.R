@@ -20,32 +20,9 @@ build_service <- function(dns_names = NULL, stages = NULL) {
             "docker-compose -f docker_pull_postgres/docker-compose.yml pull",
             "docker-compose -f docker_pull_postgres/docker-compose.yml down",
             "docker-compose -f docker_pull_postgres/docker-compose.yml up -d",
-            "git clone https://github.com/fdrennan/productor.git",
-            glue('cd /home/ubuntu/productor && echo SERVER={stage} >> .env'),
+            "git clone https://github.com/fdrennan/environ.git",
             glue(
-              'cd /home/ubuntu/productor && echo SERVER={stage} >> .bashrc'
-            ),
-            glue(
-              "cd /home/ubuntu/productor && echo SERVER={stage} >> .Renviron"
-            ),
-            glue('cd productor && git reset --hard'),
-            glue(
-              "cd /home/ubuntu/productor && sudo /usr/bin/Rscript update_env.R"
-            ),
-            glue(
-              'cd /home/ubuntu/productor && git checkout {stage} && git pull origin {stage} && git branch'
-            ),
-            glue(
-              "cd /home/ubuntu/productor && docker-compose -f docker-compose-{stage}.yaml pull"
-            ),
-            glue(
-              "cd /home/ubuntu/productor && docker-compose -f docker-compose-{stage}.yaml up -d --build productor_postgres"
-            ),
-            glue(
-              "cd /home/ubuntu/productor && docker-compose -f docker-compose-{stage}.yaml up -d --build productor_initdb"
-            ),
-            glue(
-              "cd /home/ubuntu/productor && docker-compose -f docker-compose-{stage}.yaml up -d"
+              "docker-compose -f environ/docker-compose.yaml up"
             ),
             "touch /home/ubuntu/productor_logs_complete"
           )
@@ -73,3 +50,6 @@ build_service <- function(dns_names = NULL, stages = NULL) {
                 }, .progress = TRUE)
 
 }
+
+
+

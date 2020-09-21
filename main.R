@@ -1,8 +1,9 @@
 library(ndexrstrator)
 library(furrr)
 library(glue)
-
+library(tidyverse)
 system('rm ec2*')
+terminate_service()
 
 AWS_ACCESS <- Sys.getenv('AWS_ACCESS')
 AWS_SECRET <- Sys.getenv('AWS_SECRET')
@@ -21,6 +22,8 @@ download.file(
 
 stages <- c('BUILD', 'STARTUP', 'STOP')
 BUILD_STAGE = stages[1]
+stages <- c('dev', 'beta', 'master')
+stages <- 'dev'
 
 if (BUILD_STAGE == 'BUILD') {
   # PARAMS ------------------------------------------------------------------
@@ -28,16 +31,14 @@ if (BUILD_STAGE == 'BUILD') {
   plan(multiprocess)
 
   sleep_a_sec(sleep_steps = 3, sleep_time = 10)
-  stages <- c('dev', 'beta', 'master')
   # Create Security Group
+  instance_type <- 't2.xlarge'
   security_group_name <- 'production'
   security_group_description <- 'Ports for Production'
   key_name <- 'fdren'
   open_ports <-
     c(22, 80, 6000, 8000:8020, 8787, 5432, 5439, 3000, 8080)
   image_id <-  'ami-0010d386b82bc06f0'
-  instance_type <- 't2.xlarge'
-
 
   # SECURITY GROUPS AND KEYFILES --------------------------------------------
   security_group_create(security_group_name = security_group_name,
