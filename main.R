@@ -30,14 +30,14 @@ if (BUILD_STAGE == 'BUILD') {
 
   plan(multiprocess)
 
-  sleep_a_sec(sleep_steps = 3, sleep_time = 10)
+  # sleep_a_sec(sleep_steps = 3, sleep_time = 10)
   # Create Security Group
   instance_type <- 't2.xlarge'
   security_group_name <- 'production'
   security_group_description <- 'Ports for Production'
   key_name <- 'fdren'
   open_ports <-
-    c(22, 80, 6000, 8000:8020, 8787, 5432, 5439, 3000, 8080)
+    c(22, 80, 3000, 6000, 8000:8020, 8787, 5432, 5439, 8080)
   image_id <-  'ami-0010d386b82bc06f0'
 
   # SECURITY GROUPS AND KEYFILES --------------------------------------------
@@ -77,12 +77,9 @@ if (BUILD_STAGE == 'BUILD') {
 
 
   # Wait a few, so we can get a good SSH connection first try. --------------
-
   sleep_a_sec(sleep_time = 10)
 
-
   # Get DNS NAMES -----------------------------------------------------------
-
   dns_table <-
     grab_servers()[[1]] %>% filter(state == 'running') %>%
     mutate(stages = stages)

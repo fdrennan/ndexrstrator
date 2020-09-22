@@ -8,6 +8,7 @@
 #' @importFrom ndexssh send_file
 #' @export build_service
 build_service <- function(dns_names = NULL, stages = NULL) {
+
   stage_scripts <-
     map(stages,
         function(stage) {
@@ -20,10 +21,9 @@ build_service <- function(dns_names = NULL, stages = NULL) {
             "docker-compose -f docker_pull_postgres/docker-compose.yml pull",
             "docker-compose -f docker_pull_postgres/docker-compose.yml down",
             "docker-compose -f docker_pull_postgres/docker-compose.yml up -d",
-            "git clone https://github.com/fdrennan/environ.git",
-            glue(
-              "docker-compose -f environ/docker-compose.yaml up"
-            ),
+            "git clone https://github.com/fdrennan/interface.git",
+            "echo NDEXR_VERBOSE=true >> interface/.Renviron.docker",
+            "docker-compose -f interface/docker-compose.yml up -d",
             "touch /home/ubuntu/productor_logs_complete"
           )
         })
