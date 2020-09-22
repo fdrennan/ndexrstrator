@@ -9,6 +9,11 @@ AWS_ACCESS <- Sys.getenv('AWS_ACCESS')
 AWS_SECRET <- Sys.getenv('AWS_SECRET')
 AWS_REGION <- Sys.getenv('AWS_REGION')
 
+ glue("R -e \"biggr::configure_aws(
+  aws_access_key_id = '{AWS_ACCESS}',
+  aws_secret_access_key = '{AWS_SECRET}',
+  default.region = '{AWS_REGION}'
+)\"")
 configure_aws(
   aws_access_key_id = AWS_ACCESS,
   aws_secret_access_key = AWS_SECRET,

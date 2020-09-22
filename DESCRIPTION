@@ -1,10 +1,10 @@
 Package: ndexrstrator
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.1
+Version: 0.1.2
 Author: Freddy Ray Drennsn
 Maintainer: Freddy Drennan <drennanfreddy@gmail.com>
-Description: My Orchestration tools
+Description: These are my Orchestration tools. This package loads in all of my other packages.
 Imports:
     furrr,
     glue,

@@ -6,6 +6,11 @@
 \usage{
 build_service(dns_names = NULL, stages = NULL)
 }
+\arguments{
+\item{dns_names}{The hostnames of the services to run code on}
+
+\item{stages}{Names for each of the services.}
+}
 \description{
 The workhorse
 }

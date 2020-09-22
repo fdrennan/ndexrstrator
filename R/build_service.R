@@ -6,6 +6,8 @@
 #' @importFrom fs file_delete
 #' @importFrom ndexssh execute_command_to_server
 #' @importFrom ndexssh send_file
+#' @param dns_names The hostnames of the services to run code on
+#' @param stages Names for each of the services.
 #' @export build_service
 build_service <- function(dns_names = NULL, stages = NULL) {
 

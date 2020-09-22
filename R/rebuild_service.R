@@ -5,6 +5,8 @@
 #' @importFrom glue glue
 #' @importFrom fs file_delete
 #' @importFrom ndexssh send_file
+#' @param dns_names The hostnames of the services to run code on
+#' @param stages Names for each of the services.
 #' @export rebuild_service
 rebuild_service <- function(dns_names = NULL, stages = NULL) {
   stage_scripts <-
