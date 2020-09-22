@@ -17,8 +17,9 @@ py_install("paramiko")
 
 Packages:
 #### [environ](https://github.com/fdrennan/environ)
-#### [ndexpg](https://github.com/fdrennan/ndexpg)
 #### [ndexutils](https://github.com/fdrennan/ndexutils)
-#### [ndexssh](https://github.com/fdrennan/ndexssh)
 #### [biggr](https://github.com/fdrennan/biggr)
+#### [ndexssh](https://github.com/fdrennan/ndexssh)
 #### [ndexrstrator](https://github.com/fdrennan/ndexrstrator)
+#### [ndexie](https://github.com/fdrennan/ndexie)
+#### [interface](https://github.com/fdrennan/interface)
