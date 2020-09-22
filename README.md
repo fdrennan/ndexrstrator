@@ -3,7 +3,8 @@
 
 <!-- badges: start -->
   [![Travis build status](https://travis-ci.com/fdrennan/ndexrstrator.svg?branch=master)](https://travis-ci.com/fdrennan/ndexrstrator)
-  <!-- badges: end -->
+[![Codecov test coverage](https://codecov.io/gh/fdrennan/ndexrstrator/branch/master/graph/badge.svg)](https://codecov.io/gh/fdrennan/ndexrstrator?branch=master)
+<!-- badges: end -->
 
 Installing Python
 ```
