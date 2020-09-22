@@ -15,12 +15,14 @@ Depends:
     ndexutils,
     biggr,
     ndexpg,
-    dbx
+    dbx,
+    ndexie
 Remotes: 
     fdrennan/ndexssh,
     fdrennan/ndexutils,
     fdrennan/biggr,
-    fdrennan/ndexpg
+    fdrennan/ndexpg,
+    fdrennan/ndexie
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
