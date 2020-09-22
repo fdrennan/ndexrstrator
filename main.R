@@ -33,6 +33,7 @@ if (BUILD_STAGE == 'BUILD') {
   # sleep_a_sec(sleep_steps = 3, sleep_time = 10)
   # Create Security Group
   instance_type <- 't2.xlarge'
+  instance_type <- 'z1d.xlarge'
   security_group_name <- 'production'
   security_group_description <- 'Ports for Production'
   key_name <- 'fdren'

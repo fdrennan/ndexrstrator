@@ -23,7 +23,7 @@ build_service <- function(dns_names = NULL, stages = NULL) {
             "docker-compose -f docker_pull_postgres/docker-compose.yml up -d",
             "git clone https://github.com/fdrennan/interface.git",
             "echo NDEXR_VERBOSE=true >> interface/.Renviron.docker",
-            "docker-compose -f interface/docker-compose.yml up -d",
+            "docker-compose -f interface/docker-compose.yaml up -d",
             "touch /home/ubuntu/productor_logs_complete"
           )
         })
